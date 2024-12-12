@@ -9,13 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                HStack {
+                    Image(systemName: "circle")
+                    Text("ジョギングする")
+                }
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                    Text("本を読む")
+                }
+                HStack {
+                    Image(systemName: "checkmark.circle.fill")
+                    Text("部屋の掃除")
+                }
+                HStack {
+                    Image(systemName: "circle")
+                    Text("お花の水やり")
+                }
+            }
+            .navigationTitle("ToDoリスト")
         }
-        .padding()
     }
 }
 
