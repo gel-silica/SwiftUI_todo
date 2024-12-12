@@ -8,16 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
-    var taskData = ["ジョギングする", "本を読む", "部屋の掃除", "お花の水やり"]
+    @State var taskData = [(title: "ジョギングする", completed: false),
+                           (title: "本を読む", completed: false),
+                           (title: "部屋の掃除", completed: false),
+                           (title: "お花の水やり", completed: false)]
     var body: some View {
         NavigationStack {
             List(0..<taskData.count, id: \.self) { index in
                 Button {
-                    
+                    taskData[index].completed.toggle()
                 } label: {
                     HStack {
-                        Image(systemName: "circle")
-                        Text(taskData[index])
+                        if taskData[index].completed == true {
+                            Image(systemName: "checkmark.circle.fill")
+                        } else {
+                            Image(systemName: "circle")
+                        }
+                        Text(taskData[index].title)
                     }
                 }
                 .foregroundColor(.black)
