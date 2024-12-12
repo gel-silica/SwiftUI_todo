@@ -8,24 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
+    var taskData = ["ジョギングする", "本を読む", "部屋の掃除", "お花の水やり"]
     var body: some View {
         NavigationStack {
-            List {
+            List(0..<taskData.count, id: \.self) { index in
                 HStack {
                     Image(systemName: "circle")
-                    Text("ジョギングする")
-                }
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                    Text("本を読む")
-                }
-                HStack {
-                    Image(systemName: "checkmark.circle.fill")
-                    Text("部屋の掃除")
-                }
-                HStack {
-                    Image(systemName: "circle")
-                    Text("お花の水やり")
+                    Text(taskData[index])
                 }
             }
             .navigationTitle("ToDoリスト")
