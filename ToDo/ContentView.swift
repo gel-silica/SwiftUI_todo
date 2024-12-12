@@ -19,11 +19,7 @@ struct ContentView: View {
                     taskData[index].completed.toggle()
                 } label: {
                     HStack {
-                        if taskData[index].completed == true {
-                            Image(systemName: "checkmark.circle.fill")
-                        } else {
-                            Image(systemName: "circle")
-                        }
+                        Image(systemName: taskData[index].completed == true ? "checkmark.circle.fill" : "circle")
                         Text(taskData[index].title)
                     }
                 }
