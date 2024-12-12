@@ -12,10 +12,15 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             List(0..<taskData.count, id: \.self) { index in
-                HStack {
-                    Image(systemName: "circle")
-                    Text(taskData[index])
+                Button {
+                    
+                } label: {
+                    HStack {
+                        Image(systemName: "circle")
+                        Text(taskData[index])
+                    }
                 }
+                .foregroundColor(.black)
             }
             .navigationTitle("ToDoリスト")
         }
