@@ -23,7 +23,7 @@ struct ContentView: View {
                         Text(taskData[index].title)
                     }
                 }
-                .foregroundColor(.black)
+                .foregroundColor(.primary)
             }
             .navigationTitle("ToDoリスト")
         }
